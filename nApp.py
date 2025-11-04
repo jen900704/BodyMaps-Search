@@ -674,7 +674,7 @@ def api_search():
     # ---- 分頁：注意 total 先算完篩選後的完整筆數 ----
     total    = int(len(df))
     page     = max(_to_int(_arg("page", "1")) or 1, 1)
-    per_page = _to_int(_arg("per_page", "24")) or 24
+    per_page = _to_int(_arg("per_page", "10000")) or 24
     per_page = max(1, min(per_page, 1_000_000))
 
     pages = max(1, int(math.ceil(total / per_page)))
